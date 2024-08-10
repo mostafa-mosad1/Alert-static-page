@@ -1,0 +1,55 @@
+// paremters
+
+// $bg-color: rgb(163, 40, 40);
+// $border-color: rgb(22, 15, 15);
+// $text-color: rgb(231, 145, 145);
+
+@mixin template($type, $bg-color, $border-color, $text-color) {
+  .#{$type} {
+    background-color: $bg-color;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    border: 3px dotted $border-color;
+    color: $text-color;
+    margin-block: 18px;
+    border-radius: 10px;
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      .title {
+        font-size: 30px;
+
+        svg {
+          margin-right: 5px;
+          font-weight: bold;
+        }
+      }
+      svg {
+        margin-right: 5px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .des {
+      font-size: 20px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+//               name_call    bg      border    text
+@include template("danger", red, cyan, white);
+@include template("waring", orange, cyan, blue);
+@include template("sucss", green, cyan, white);
+@include template("done", #be878a, cyan, rgb(5, 1, 1));
+@include template("gry", grey, cyan, black);
